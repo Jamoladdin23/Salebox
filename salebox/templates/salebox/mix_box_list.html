@@ -1,8 +1,6 @@
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
 
-<!--<html lang="ru">-->
-<!--<html lang="ru">-->
 <head>
     <meta content="dark" name="color-scheme">
 
@@ -11,7 +9,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>shopbox</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-<!--    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>-->
 
 
 </head>
@@ -40,10 +37,8 @@
         <div class="navbar navbar-dark bg-dark shadow-sm">
         <div class="container d-flex justify-content-between">
             <a href="/" class="navbar-brand d-flex align-items-center">
-<!--                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="me-2" viewBox="0 0 24 24">-->
                     <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
                     <circle cx="12" cy="13" r="4"></circle>
-                </svg>
                 <strong>Mix-Box-Sale</strong>
             </a>
             <div class="d-flex align-items-center">
@@ -52,59 +47,19 @@
 
                     <a href="/login/" class="btn btn-outline-info my-2 my-sm-0 me-2">Login</a>
                     <a href="/sign-up/" class="btn btn-outline-info my-2 my-sm-0 me-2">Sign-Up</a>
-
                     <button class="navbar-toggler ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="true" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                 </div>
             </div>
         </div>
-
     </div>
 
-
-
 </header>
-
 
 <body>
-
-<!--<header>fkdkf</header>-->
-
-<header>
-    <div>
-
-    </div>
-</header>
 <div class="container text-center">
   <div class="row">
-<!--    <div class="col">-->
-<!--      <h3>contact us</h3>-->
-<!--        <div><a href="https://t.me/Jamoladdin23">telegram</a></div>-->
-<!--        <div><a href="https://www.instagram.com/box_sale1?igsh=ZndheHpwdHU4ZXp2&utm_source=qr">instagram</a></div>-->
-<!--        <div><a href="https://www.tiktok.com/@boxsale1?_t=8neluNAUY9R&_r=1">Tik-Tok</a></div>-->
-
-<!--    </div>-->
-<!--    <div class="col">-->
-<!--&lt;!&ndash;      <section class="py-5 text-center container">&ndash;&gt;-->
-<!--&lt;!&ndash;    <div class="row py-lg-5">&ndash;&gt;-->
-<!--&lt;!&ndash;      <div class="col-lg-6 col-md-8 mx-auto">&ndash;&gt;-->
-<!--        <h1 class="fw-light">Welcome to</h1><h1>MIX-BOX-SALE</h1>-->
-<!--          <div>-->
-<!--            <mark class="">Choose your custom box</mark>-->
-<!--            <button type="button" class="btn btn-warning">Here</a></button>-->
-<!--          </div>-->
-<!--&lt;!&ndash;        <p class="lead text-body-secondary">Список , что можете найти у нас </p>&ndash;&gt;-->
-<!--&lt;!&ndash;      </div>&ndash;&gt;-->
-<!--        <strong>товары по самой низкой цене</strong>-->
-<!--&lt;!&ndash;</section>&ndash;&gt;-->
-<!--    </div>-->
-<!--    <div class="col">-->
-<!--      Column-->
-<!--    </div>-->
-<!--  </div>-->
-<!--</div>-->
-
   <div class="card-body">
     <div class="card">
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 g-5">
@@ -114,62 +69,18 @@
                     {% if box.images %}
                         <img src="{{ MEDIA_URL }}{{ box.images }}" class="card-img-top img-fluid" style="height: 200px; width: 450px;">
                     {% endif %}
-
                     <div class="card-body">
                         <h3 class="container">{{ box.box_name }} </h3>
                         <h6>{{ box.description_box }}</h6>
                         <p class="card-text">price €:{{ box.box_price }}</p>
-<!--                        <p class="card-text">available {{is_available}}</p>-->
-<!--                        <p class="card-text">in the box {{included_in_the_box}}</p>-->
-                        <div class="d-flex justify-content-between align-items-center">
-                            <!-- Тут можуть бути дії, пов'язані з автором -->
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-sm btn-outline-secondary">Buy</button>
-                                <button type="button" class="btn btn-sm btn-outline-secondary">in the box</button>
-                            </div>
-
-                        </div>
                     </div>
                 </div>
             </div>
             {% endfor %}
-            <nav aria-label="Page navigation example">
-  <ul class="pagination">
-    {% if page_obj.has_previous %}
-        <li class="page-item">
-            <a class="page-link" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous">
-                <span aria-hidden="true">&laquo;</span>
-            </a>
-
-    {% endif %}
-
-    {% for i in page_obj.paginator.page_range %}
-        {% if page_obj.number == i %}
-            <li class="page-item active"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
-        {% else %}
-            <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
-        {% endif %}
-    {% endfor %}
-
-    {% if page_obj.has_next %}
-        <li class="page-item">
-            <a class="page-link" href="?page={{ page_obj.next_page_number }}" aria-label="Next">
-                <span aria-hidden="true">&raquo;</span>
-            </a>
-        </li>
-    {% else %}
-        <li class="page-item disabled">
-            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">&raquo;</a>
-        </li>
-    {% endif %}
-  </ul>
-</nav>
-
         </div>
     </div>
+  </div>
+  </div>
 </div>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-
 </body>
 </html>
