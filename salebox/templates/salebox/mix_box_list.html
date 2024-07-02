@@ -67,7 +67,7 @@
             <div class="col">
                 <div class="card shadow-sm">
                     {% if box.images %}
-                        <img src="{{ MEDIA_URL }}{{ box.images }}" class="card-img-top img-fluid" style="height: 200px; width: 450px;">
+                        <img src="{{ MEDIA_URL }}{{ box.images.url }}" class="card-img-top img-fluid" style="height: 200px; width: 450px;">
                     {% endif %}
                     <div class="card-body">
                         <h3 class="container">{{ box.box_name }} </h3>
