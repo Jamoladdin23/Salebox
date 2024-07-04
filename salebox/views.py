@@ -16,7 +16,7 @@ from .models import MixBox, Product
 #     extra_context = {
 #         'title': 'List of products'}
 
-class Product_list(ListView):
+class ProductList(ListView):
     model = Product
     template_name = 'salebox/product_list.html'
     context_object_name = 'product'

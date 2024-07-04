@@ -1,0 +1,40 @@
+{% extends "base.html" %}<!--# unosled ot bazuvugu htmla-->
+
+{% block content %}
+<section class="py-5 text-center container">
+    <div class="row py-lg-5">
+        <div class="col-lg-8 mx-auto">
+            <h1 class="fw-light">{{ product.product_name }}</h1>
+            <p class="lead text-body-secondary">{{ product.description }}</p>
+        </div>
+    </div>
+</section>
+<div class="album py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            {% if product.product_img %}
+            <div class="col-md-6">
+                <img src="{{ product.product_img.url }}" class="img-fluid" style="max-height: 600px; object-fit: cover;">
+            </div>
+            {% endif %}
+            <div class="col-md-6">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <p class="card-text">product_name: {{ product.product_name }}</p>
+                        <p class="card-text">description: {{ product.description }}</p>
+                        <p class="card-text">price: {{ product.price }}</p>
+                        <p class="card-text">
+                            is_available: {% if book.is_available %}are available{% else %}out of stock{% endif %}
+                        </p>
+                        <!-- Тут можуть бути дії, пов'язані з книгою -->
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-sm btn-outline-secondary">buy</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
